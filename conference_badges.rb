@@ -12,9 +12,9 @@ end
     return badge
 end
 
-def assign_rooms(speakers)
+def assign_rooms(speaker)
   assign = []   
-  speakers.each_with_index do |speaker, index|
+  speaker.each_with_index do |speaker, index|
     indexplusone = index + 1  
    assign << "Hello, #{speaker}!  You'll be assigned to room #{indexplusone}!"
  end
