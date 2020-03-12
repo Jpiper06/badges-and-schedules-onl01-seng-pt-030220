@@ -5,29 +5,30 @@ def badge_maker(speaker)
 end  
   
   def batch_badge_creator(speakers)
-    badge = [0]
+    badge = []
      speaker.each do |speaker|
-      badges << badge_maker (speaker)
+      badge << badge_maker (speaker)
   end 
-    badges
+    return badge
 end
 
 def assign_rooms(speakers)
-  assign = [0]   
-  speakers.each_with_index do |speaker
-speaker, room|
-   assign << "Hello, #{"speaker}! 
- You'll be assigned to room #{room +1 }!"
+  assign = []   
+  speakers.each_with_index do |speaker, index|
+    indexplusone = index + 1  
+   assign << "Hello, #{speaker}!  You'll be assigned to room #{indexplusone}!"
  end
-  assign
-
+  return assign
 end
 
-def printer (speakers)
-  speakers.each_with_index
-  puts
-batch_badge_creatpr(speakers)
-  puts assign_rooms(speaker)
+def printer(attendees)
+  batch_badge_creator(attendees).each do |badges|
+    puts badges
+  end
+  assign_rooms(attendees).each do |rooms|
+    puts rooms
+  end 
+
 end 
       
 
